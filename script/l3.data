@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+for i in 0.95 0.96 0.97 0.98 0.99 1.00 1.01 1.02 1.03 1.04 1.05;do echo -e $i"\t"$(grep ' without' $i/OUTCAR |tail -n 1| awk '{print $7}');done > data

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#convergence scrip 
+for i in $(seq 200 50 500);do cd $i;qsub ssc.pbs ; cd $OLDPWD ;done
+

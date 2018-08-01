@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#convergence scrip 
+for i in {11..21};do cd $i;qsub ssc.pbs ; cd $OLDPWD ;done
+

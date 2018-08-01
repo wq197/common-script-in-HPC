@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#convergence scrip 
+for j in {11..21};do echo $j,$(grep E0= $j/OSZICAR | awk '{print $5}');done | sort -n >data.dat

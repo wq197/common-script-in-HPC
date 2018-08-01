@@ -1,0 +1,9 @@
+#!/bin/sh
+#PBS -N 1DMA 
+#PBS -l nodes=1:ppn=28
+#PBS -q spst_ningzhj
+#PBS -o job.out
+#PBS -e job.err
+cd $PBS_O_WORKDIR
+ulimit -s unlimited
+/public/software//mpi/openmpi/1.8.7/intel/bin/mpirun -np 28 /public/home/lihsh/apps/vasp.5.4.4/bin/vasp_std

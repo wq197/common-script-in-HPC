@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# generate new project
+element="6PEA"
+cd ~
+mkdir $element
+cd ~/$element
+mkdir 1convergence
+mkdir 2relax
+mkdir 3static
+mkdir 4dos
+mkdir 5band
+cd ~/$element/1convergence
+mkdir encut
+mkdir k-points
+cd ~/script
+cp c1.sub c2.data encut.py  ~/$element/1convergence/encut
+cp k0.cp k1.ch k2.sub k3.data ~/$element/1convergence/k-points 
+cp gap.sh ~/$element/3static
+cd ~
+cp -r src ~/$element/1convergence/encut
+cp -r ~/src/ ~/$element/2relax
+
+

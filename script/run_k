@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+rm WAVECAR
+for i in 5 7 9 11 13 
+do
+cat > KPOINTS << !
+Automatic generation
+0
+M
+$i $i $i
+0 0 0
+!
+echo "k mech = $i*$i*$i";mpirun -np 24 /home/apps/vasp541_std
+E='grep "TOTEN" OUTCAR | tail -1 | awk '{print $5}'' 
+KP='grep "irreducible" OUTCAR | tail -1 | awk '{print $2}''
+echo $i $KP $E >>comment
+done
